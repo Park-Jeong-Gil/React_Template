@@ -3,31 +3,46 @@ import {
   createBrowserRouter,
   RouterProvider,
   RouteObject,
+  Navigate,
 } from 'react-router-dom';
 import DefaultLayout from './layouts/Default';
 import { navigation } from '../constants/navigations';
 
 interface NavigationRoute {
-  path?: string;
+  index?: boolean;
+  path: string;
   element: React.ComponentType;
   children?: NavigationRoute[];
 }
 
 // 재귀적으로 children을 처리하기 위한 함수
 function convertRoutes(routes: NavigationRoute[]): RouteObject[] {
-  return routes.map(({ element, children, ...route }) => ({
-    ...route,
-    element: React.createElement(element),
-    children: children ? convertRoutes(children) : undefined,
-  }));
-}
+  return routes.map(({ element, children, ...route }) => {
+    const routeObject: RouteObject = {
+      ...route,
+      element: React.createElement(element),
+    };
 
-const routePages = convertRoutes(navigation);
+    if (children) {
+      routeObject.children = convertRoutes(children);
+
+      // 첫 번째 자식 경로로 리다이렉트
+      if (children[0]?.path) {
+        routeObject.children.unshift({
+          index: true,
+          element: <Navigate to={children[0].path} />,
+        });
+      }
+    }
+
+    return routeObject;
+  });
+}
 
 const router = createBrowserRouter([
   {
     element: <DefaultLayout />,
-    children: routePages,
+    children: convertRoutes(navigation),
   },
 ]);
 

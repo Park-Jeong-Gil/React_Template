@@ -2,13 +2,14 @@ import { FC } from 'react';
 
 // page list
 import Main from '../routes/pages/Main';
-import About from '../routes/pages/About/About';
+
+import About from '../routes/pages/About';
 import Company from '../routes/pages/About/Company';
 import Team from '../routes/pages/About/Team';
 
-interface pagesType {
+export interface pagesType {
   index?: boolean;
-  path?: string;
+  path: string;
   element: FC;
   label: string;
   children?: pagesType[];
@@ -25,8 +26,8 @@ export const navigation: pagesType[] = [
     element: About,
     label: 'About',
     children: [
-      { path: '/about/company', element: Company, label: 'Company' },
-      { path: '/about/team', element: Team, label: 'Team' },
+      { path: 'company', element: Company, label: 'Company' },
+      { path: 'team', element: Team, label: 'Team' },
     ],
   },
 ];

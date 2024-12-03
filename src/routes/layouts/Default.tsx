@@ -3,7 +3,7 @@ import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
 import Meta from '../../components/common/Meta';
 
-export default function DefaultLayout(): JSX.Element {
+export default function DefaultLayout() {
   return (
     <>
       <Meta
