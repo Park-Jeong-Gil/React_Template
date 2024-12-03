@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { navigations } from '../../constants/navigations';
+import { navigation } from '../../constants/navigations';
 
 export default function Header() {
   return (
@@ -7,22 +7,14 @@ export default function Header() {
       <header>
         <nav>
           <ul>
-            {Object.keys(navigations).map((key) => (
-              <li key={key}>
-                <NavLink to={navigations[key].path}>
-                  {navigations[key].label}
-                </NavLink>
-                {navigations[key].children && (
+            {navigation.map(({ path, label, children }) => (
+              <li key={path}>
+                <NavLink to={path || '#'}>{label}</NavLink>
+                {children && (
                   <ul>
-                    {Object.keys(navigations[key].children).map((childKey) => (
-                      <li key={childKey}>
-                        {navigations[key].children &&
-                          navigations[key].children[childKey] && (
-                            <NavLink
-                              to={navigations[key].children[childKey].path}>
-                              {navigations[key].children[childKey].label}
-                            </NavLink>
-                          )}
+                    {children?.map(({ path, label }) => (
+                      <li key={path}>
+                        <NavLink to={path || '#'}>{label}</NavLink>
                       </li>
                     ))}
                   </ul>
