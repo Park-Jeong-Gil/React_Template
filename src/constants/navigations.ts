@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-// page list
+// page components list
 import Main from '../routes/pages/Main';
 
 import About from '../routes/pages/About';
@@ -8,7 +8,6 @@ import Company from '../routes/pages/About/Company';
 import Team from '../routes/pages/About/Team';
 
 export interface pagesType {
-  index?: boolean;
   path: string;
   element: FC;
   label: string;

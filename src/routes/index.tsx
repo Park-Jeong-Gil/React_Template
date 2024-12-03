@@ -5,11 +5,10 @@ import {
   RouteObject,
   Navigate,
 } from 'react-router-dom';
-import DefaultLayout from './layouts/Default';
+import DefaultLayout from './layouts/Layout';
 import { navigation } from '../constants/navigations';
 
 interface NavigationRoute {
-  index?: boolean;
   path: string;
   element: React.ComponentType;
   children?: NavigationRoute[];
@@ -23,13 +22,12 @@ function convertRoutes(routes: NavigationRoute[]): RouteObject[] {
       element: React.createElement(element),
     };
 
+    // 하위 경로가 있으면 첫 번째 경로로 리다이렉트
     if (children) {
       routeObject.children = convertRoutes(children);
 
-      // 첫 번째 자식 경로로 리다이렉트
       if (children[0]?.path) {
         routeObject.children.unshift({
-          index: true,
           element: <Navigate to={children[0].path} />,
         });
       }

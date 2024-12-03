@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import Header from '../../components/common/Header';
-import Footer from '../../components/common/Footer';
-import Meta from '../../components/common/Meta';
+import Header from './Header';
+import Footer from './Footer';
+import Meta from './Meta';
 
 export default function DefaultLayout() {
   return (
