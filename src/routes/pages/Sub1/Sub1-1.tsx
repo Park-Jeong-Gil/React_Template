@@ -4,12 +4,13 @@ export default function Sub1_1() {
   return (
     <>
       <Meta
-        title='base - Sub-1 | 1-1'
-        description='Sub-1 페이지 입니다.'
-        keywords='Sub-1'
+        title='base - Sub1 | 1-1'
+        description='Sub1 페이지 입니다.'
+        keywords='Sub1'
         url='https://www.barunsoncard.com/'
       />
-      <p>Sub-1 | 1-1 page</p>
+
+      <p>Sub-1 | 1-1 page content</p>
     </>
   );
 }

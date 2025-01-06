@@ -9,8 +9,10 @@ export default function Main() {
         keywords='메인'
         url='https://www.barunsoncard.com/'
       />
-      <h2>Main page</h2>
-      <p>Main page content</p>
+      <section id='container'>
+        <h2>Main page</h2>
+        <p>Main page content</p>
+      </section>
     </>
   );
 }

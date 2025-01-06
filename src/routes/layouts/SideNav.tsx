@@ -3,7 +3,7 @@ import { navigation } from '../../constants/navigations';
 
 export default function SideNav() {
   return (
-    <nav id='lnb'>
+    <aside className='lnb_nav'>
       <h3>lnb list</h3>
       <ul>
         {navigation.map(({ path, label, children }) => (
@@ -23,6 +23,6 @@ export default function SideNav() {
           </li>
         ))}
       </ul>
-    </nav>
+    </aside>
   );
 }

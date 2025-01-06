@@ -11,6 +11,8 @@ import Sub2 from '../routes/pages/Sub2';
 import Sub2_1 from '../routes/pages/Sub2/Sub2-1';
 import Sub2_2 from '../routes/pages/Sub2/Sub2-2';
 
+import Sub3 from '../routes/pages/Sub3';
+
 export interface pagesType {
   path: string;
   element: FC;
@@ -29,23 +31,31 @@ export const navigation: pagesType[] = [
     label: 'Main',
   },
   {
-    path: '/Sub1',
+    path: '/sub1',
     element: Sub1,
     label: 'Sub1',
     // 2뎁스는 아래 처럼 children 배열로 구성
     children: [
-      { path: 'Sub1-1', element: Sub1_1, label: 'Sub1-1' },
-      { path: 'Sub1-2', element: Sub1_2, label: 'Sub1-2' },
+      { path: 'sub1-1', element: Sub1_1, label: 'Sub1-1' },
+      { path: 'sub1-2', element: Sub1_2, label: 'Sub1-2' },
     ],
   },
   {
-    path: '/Sub2',
+    path: '/sub2',
     element: Sub2,
     label: 'Sub2',
     // 2뎁스는 아래 처럼 children 배열로 구성
     children: [
-      { path: 'Sub2-1', element: Sub2_1, label: 'Sub2-1' },
-      { path: 'Sub2-2', element: Sub2_2, label: 'Sub2-2' },
+      { path: 'sub2-1', element: Sub2_1, label: 'Sub2-1' },
+      { path: 'sub2-2', element: Sub2_2, label: 'Sub2-2' },
     ],
+  },
+  {
+    // 페이지 경로
+    path: '/sub3',
+    // 페이지 컴포넌트
+    element: Sub3,
+    // 메뉴에 보여질 페이지 라벨
+    label: 'Sub3',
   },
 ];
