@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 
-export default function About() {
+export default function Sub2() {
   return (
     <>
-      <h2>About Page</h2>
+      <h2>Sub-2 Page</h2>
       <Outlet />
     </>
   );

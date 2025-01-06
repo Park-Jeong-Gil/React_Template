@@ -1,0 +1,153 @@
+@use './variables' as *;
+@use './mixin' as *;
+@use './functions' as *;
+
+html,
+body {
+  height: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  @include mo {
+    font-size: movw(13);
+  }
+
+  @include pc {
+    font-size: pcvw(14);
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#header,
+#main,
+#footer {
+  width: 100%;
+}
+
+#header {
+  position: sticky;
+  top: 0;
+
+  .gnb_list {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+
+    @include mo {
+      font-size: movw(14);
+      gap: pcvw(8);
+    }
+
+    @include pc {
+      font-size: pcvw(18);
+      gap: pcvw(12);
+    }
+  }
+
+  .c_inner {
+    border-bottom: 1px solid #ddd;
+
+    nav {
+      @include mo {
+        padding: movw(20) 0;
+      }
+
+      @include pc {
+        padding: pcvw(30) 0;
+      }
+    }
+  }
+
+  // .depth2 {
+  //   display: flex;
+  //   flex-direction: column;
+  //   font-weight: 700;
+
+  //   @include mo {
+  //     font-size: movw(10);
+  //     margin-top: movw(4);
+  //   }
+
+  //   @include pc {
+  //     font-size: pcvw(14);
+  //     margin-top: pcvw(8);
+  //   }
+  // }
+}
+
+#main {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 movw($pd);
+
+  @include mo {
+    h2 {
+      font-size: movw(18);
+    }
+  }
+
+  @include pc {
+    padding: 0 pcvw($pd);
+    max-width: ($pc_max) * 1px;
+
+    h2 {
+      font-size: pcvw(32);
+    }
+  }
+
+  #lnb {
+  }
+}
+
+#footer {
+  margin-top: auto;
+
+  .c_inner {
+    border-top: 1px solid #ddd;
+
+    @include mo {
+      padding: movw(20) 0;
+    }
+
+    @include pc {
+      padding: pcvw(30) 0;
+    }
+  }
+}
+
+.c_inner {
+  margin: 0 auto;
+  width: 100%;
+
+  @include mo {
+    padding: 0 movw($pd);
+  }
+
+  @include pc {
+    padding: 0 pcvw($pd);
+    max-width: ($pc_max) * 1px;
+  }
+}
+
+.section {
+  // &_head  // }
+  &_container {
+    // .c_inner {
+    // }
+  }
+}

@@ -3,9 +3,13 @@ import { FC } from 'react';
 // page components list
 import Main from '../routes/pages/Main';
 
-import About from '../routes/pages/About';
-import Company from '../routes/pages/About/Company';
-import Team from '../routes/pages/About/Team';
+import Sub1 from '../routes/pages/Sub1';
+import Sub1_1 from '../routes/pages/Sub1/Sub1-1';
+import Sub1_2 from '../routes/pages/Sub1/Sub1-2';
+
+import Sub2 from '../routes/pages/Sub2';
+import Sub2_1 from '../routes/pages/Sub2/Sub2-1';
+import Sub2_2 from '../routes/pages/Sub2/Sub2-2';
 
 export interface pagesType {
   path: string;
@@ -25,13 +29,23 @@ export const navigation: pagesType[] = [
     label: 'Main',
   },
   {
-    path: '/about',
-    element: About,
-    label: 'About',
+    path: '/Sub1',
+    element: Sub1,
+    label: 'Sub1',
     // 2뎁스는 아래 처럼 children 배열로 구성
     children: [
-      { path: 'company', element: Company, label: 'Company' },
-      { path: 'team', element: Team, label: 'Team' },
+      { path: 'Sub1-1', element: Sub1_1, label: 'Sub1-1' },
+      { path: 'Sub1-2', element: Sub1_2, label: 'Sub1-2' },
+    ],
+  },
+  {
+    path: '/Sub2',
+    element: Sub2,
+    label: 'Sub2',
+    // 2뎁스는 아래 처럼 children 배열로 구성
+    children: [
+      { path: 'Sub2-1', element: Sub2_1, label: 'Sub2-1' },
+      { path: 'Sub2-2', element: Sub2_2, label: 'Sub2-2' },
     ],
   },
 ];
