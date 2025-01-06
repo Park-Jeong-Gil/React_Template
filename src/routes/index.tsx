@@ -5,7 +5,7 @@ import {
   RouteObject,
   Navigate,
 } from 'react-router-dom';
-import DefaultLayout from './layouts/Layout';
+import DefaultLayout from './layouts/DefaultLayout';
 import { navigation } from '../constants/navigations';
 
 interface NavigationRoute {
