@@ -21,9 +21,9 @@ export interface pagesType {
 }
 
 export const navigation: pagesType[] = [
-  // 페이지 라우팅 기본 구성
+  // 페이지 라우팅 기본 구성 : 객체 하나 당 1뎁스 메뉴 하나
   {
-    // 페이지 경로
+    // url 경로
     path: '/',
     // 페이지 컴포넌트
     element: Main,
@@ -34,7 +34,7 @@ export const navigation: pagesType[] = [
     path: '/sub1',
     element: Sub1,
     label: 'Sub1',
-    // 2뎁스는 아래 처럼 children 배열로 구성
+    // 2뎁스가 있다면 아래 처럼 children 배열로 구성
     children: [
       { path: 'sub1-1', element: Sub1_1, label: 'Sub1-1' },
       { path: 'sub1-2', element: Sub1_2, label: 'Sub1-2' },
@@ -44,18 +44,14 @@ export const navigation: pagesType[] = [
     path: '/sub2',
     element: Sub2,
     label: 'Sub2',
-    // 2뎁스는 아래 처럼 children 배열로 구성
     children: [
       { path: 'sub2-1', element: Sub2_1, label: 'Sub2-1' },
       { path: 'sub2-2', element: Sub2_2, label: 'Sub2-2' },
     ],
   },
   {
-    // 페이지 경로
     path: '/sub3',
-    // 페이지 컴포넌트
     element: Sub3,
-    // 메뉴에 보여질 페이지 라벨
     label: 'Sub3',
   },
 ];
