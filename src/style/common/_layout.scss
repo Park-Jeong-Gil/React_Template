@@ -62,7 +62,7 @@ body {
 
     @include mo {
       font-size: movw(14);
-      gap: pcvw(8);
+      gap: pcvw(20);
       padding: movw(16) 0;
     }
 
@@ -100,9 +100,6 @@ body {
     h2 {
       font-size: pcvw(32);
     }
-  }
-
-  .container {
   }
 }
 

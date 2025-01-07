@@ -3,6 +3,9 @@
 
 .lnb_nav {
   @include mo {
+    border-bottom: movw(1) solid #ddd;
+    padding-bottom: movw(8);
+
     .depth2 {
       display: flex;
 
