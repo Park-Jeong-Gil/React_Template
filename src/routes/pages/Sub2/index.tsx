@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import SideNav from '../../layouts/SideNav';
+import SideNav from '../../layouts/LnbMenu';
 
 export default function Sub2() {
   return (

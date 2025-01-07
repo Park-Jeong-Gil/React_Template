@@ -1,4 +1,4 @@
-import SideNav from '../layouts/SideNav';
+import SideNav from '../layouts/LnbMenu';
 import Meta from '../layouts/Meta';
 
 export default function Sub3() {
