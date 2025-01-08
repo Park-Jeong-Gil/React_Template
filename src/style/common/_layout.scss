@@ -4,8 +4,8 @@
 
 html,
 body {
-  height: 100%;
-
+  height: auto;
+  min-height: 100vh;
   * {
     box-sizing: border-box;
   }
@@ -31,6 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 100vh;
 
   @include mo {
     gap: movw(16);
@@ -78,7 +79,7 @@ body {
   display: flex;
   margin: 0 auto;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 
   @include mo {
     flex-direction: column;

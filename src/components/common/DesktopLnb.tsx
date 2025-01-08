@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { getActiveMainMenu } from '../../util/activeMenu';
 
+import '../../style/components/Lnb.scss';
+
 export default function DesktopLnb() {
   const activeMainMenu = getActiveMainMenu();
 

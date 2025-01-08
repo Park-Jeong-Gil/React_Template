@@ -12,11 +12,12 @@ import Sub2_1 from '../routes/pages/Sub2/Sub2-1';
 import Sub2_2 from '../routes/pages/Sub2/Sub2-2';
 
 import Sub3 from '../routes/pages/Sub3';
+import Detail from '../routes/pages/detail/ListDetail';
 
 export interface pagesType {
   path: string;
   element: FC;
-  label: string;
+  label?: string;
   children?: pagesType[];
 }
 
@@ -53,5 +54,10 @@ export const navigation: pagesType[] = [
     path: '/sub3',
     element: Sub3,
     label: 'Sub3',
+  },
+  {
+    path: '/detail/:id',
+    element: Detail,
+    // label 없으면 메뉴에 표시 안됨
   },
 ];

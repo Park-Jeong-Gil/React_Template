@@ -1,3 +1,4 @@
+import List from '../../components/common/List';
 import SideNav from '../layouts/LnbMenu';
 import Meta from '../layouts/Meta';
 
@@ -14,6 +15,7 @@ export default function Sub3() {
       <section id='container'>
         <h2>Sub-3 Page</h2>
         <p>Sub-3 Page content</p>
+        <List />
       </section>
     </>
   );
