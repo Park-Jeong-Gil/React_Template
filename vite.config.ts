@@ -15,8 +15,8 @@ async function optimizeImages(outputDir: string) {
     const files = await imagemin([`${imagesDir}/*.{jpg,png,svg}`], {
       destination: imagesDir,
       plugins: [
-        imageminWebp({ quality: 85 }) // WebP 변환 및 최적화
-      ]
+        imageminWebp({ quality: 85 }), // WebP 변환 및 최적화
+      ],
     });
     console.log(`Optimized ${files.length} images`);
   } catch (error) {
@@ -35,20 +35,20 @@ export default defineConfig({
       async closeBundle() {
         const outputDir = resolve(__dirname, 'build');
         await optimizeImages(outputDir);
-      }
-    }
+      },
+    },
   ],
   resolve: {
-    alias: [{ find: '@', replacement: '/src' }]
+    alias: [{ find: '@', replacement: '/src' }],
   },
-  base: '',
+  base: '/',
   build: {
     cssMinify: true,
     minify: true,
     outDir: './build',
     rollupOptions: {
       input: {
-        index: resolve(__dirname, 'index.html')
+        index: resolve(__dirname, 'index.html'),
       },
       output: {
         inlineDynamicImports: false,
@@ -71,15 +71,15 @@ export default defineConfig({
           return `resources/${extType || 'other'}/[name][extname]`; // Default fallback
         },
         chunkFileNames: `resources/js/${projectName}-${date}-[hash].js`,
-        entryFileNames: `resources/js/${projectName}-${date}-[hash].js`
-      }
-    }
+        entryFileNames: `resources/js/${projectName}-${date}-[hash].js`,
+      },
+    },
   },
   css: {
     preprocessorOptions: {
       scss: {
         // 추가적인 SCSS 옵션을 여기에 설정할 수 있습니다.
-      }
-    }
-  }
+      },
+    },
+  },
 });
