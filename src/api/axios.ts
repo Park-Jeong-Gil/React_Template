@@ -24,3 +24,11 @@ export const axiosInstance = axios.create({
     'Content-Type': 'application/json',
   },
 });
+
+export const axiosInstanceProducts = axios.create({
+  baseURL: 'https://fakestoreapi.com',
+  withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});

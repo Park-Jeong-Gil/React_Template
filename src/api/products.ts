@@ -1,15 +1,25 @@
 // products Mock api.
 // https://fakeapi.platzi.com/en/about/introduction/
 
+import { axiosInstanceProducts } from './axios';
+
 // import axios from 'axios';
 
-// const axiosInstance = axios.create({
-//   baseURL: 'https://api.escuelajs.co/api/v1/products',
-//   withCredentials: true,
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-// });
+export type CartItemType = {
+  id: number;
+  category: string;
+  description: string;
+  image: string;
+  price: number;
+  title: string;
+  amount: number;
+};
+
+export const getProductsList = async (id: number): Promise<CartItemType[]> => {
+  const { data } = await axiosInstanceProducts.get(`/products=${id}`);
+
+  return data;
+};
 
 // interface products {
 //   id: 4;
