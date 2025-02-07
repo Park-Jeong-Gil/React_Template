@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
+# React SPA Base
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React와 TypeScript를 기반으로 한 SPA(Single Page Application) 프로젝트 템플릿입니다.
 
-Currently, two official plugins are available:
+## 프로젝트 개요
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18과 TypeScript를 사용한 최신 웹 개발 환경
+- Vite를 통한 빠른 개발 및 빌드 지원
+- MUI(Material-UI)를 활용한 UI 컴포넌트
+- Recoil을 이용한 전역 상태 관리
+- React Query를 통한 서버 상태 관리
+- React Router를 이용한 라우팅 처리
 
-## Expanding the ESLint configuration
+## 주요 기술 스택
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React 18.3
+- TypeScript
+- Vite
+- Material UI
+- React Query
+- React Router
+- Recoil
+- Axios
+- ESLint & Prettier
 
-- Configure the top-level `parserOptions` property like this:
+## 실행 방법
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. 프로젝트 클론:
+   ```sh
+   git clone [repository-url]
+   cd react-spa-base
+   ```
+
+2. 의존성 설치:
+   ```sh
+   npm install
+   ```
+
+3. 개발 서버 실행:
+   ```sh
+   npm run dev
+   ```
+
+4. 브라우저에서 `http://localhost:3001` 접속
+
+## 빌드 방법
+
+프로덕션 빌드:
+```sh
+npm run build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+빌드된 결과물 미리보기:
+```sh
+npm run preview
 ```
+
+## 프로젝트 구조
+
+```
+src/
+├── components/     # 재사용 가능한 컴포넌트
+├── routes/        # 라우팅 설정 및 페이지 컴포넌트
+├── layouts/       # 레이아웃 컴포넌트
+├── constants/     # 상수 정의
+├── services/      # API 서비스
+└── types/         # TypeScript 타입 정의
+```
+
+## 개발 도구
+
+- ESLint: 코드 품질 및 스타일 검사
+- Prettier: 코드 포맷팅
+- TypeScript: 정적 타입 검사
