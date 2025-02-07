@@ -1,4 +1,4 @@
-# React SPA Base
+# React Template
 
 React와 TypeScript를 기반으로 한 SPA(Single Page Application) 프로젝트 템플릿입니다.
 
