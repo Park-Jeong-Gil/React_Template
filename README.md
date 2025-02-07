@@ -25,23 +25,17 @@ React와 TypeScript를 기반으로 한 SPA(Single Page Application) 프로젝�
 
 ## 실행 방법
 
-1. 프로젝트 클론:
-   ```sh
-   git clone [repository-url]
-   cd react-spa-base
-   ```
-
-2. 의존성 설치:
+1. 의존성 설치:
    ```sh
    npm install
    ```
 
-3. 개발 서버 실행:
+2. 개발 서버 실행:
    ```sh
    npm run dev
    ```
 
-4. 브라우저에서 `http://localhost:3001` 접속
+3. 브라우저에서 `http://localhost:3001` 접속
 
 ## 빌드 방법
 
